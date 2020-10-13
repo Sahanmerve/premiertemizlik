@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CleanerMVC.Models.Contact>
+
+@{
+    ViewBag.Title = "TALEP FORMLARI";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            Müşteri Adı Soyadı:
+        </th>
+        <th>
+            Müşteri E-mail Adresi:
+        </th>
+        <th>
+           Müşteri Telefon Numarası:
+        </th>
+        <th>
+            Müşteri Talep Açıklaması:
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.CustomerName
+            </td>
+            <td>
+                @item.CustomerEmail
+            </td>
+            <td>
+                @item.CustomerPhone
+            </td>
+            <td>
+                @item.CustomerDesc
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.ContactID }) |*@
+                @Html.ActionLink("Detay", "Details", new { id = item.ContactID }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.ContactID })
+            </td>
+        </tr>
+    }
+
+</table>

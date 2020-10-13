@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+@if (User.IsInRole("Admin"))
+{
+    <section id="admin">
+
+        <div class="row">
+
+            <div class="twelve columns centered">
+
+                <h2>ADMİN İŞLEMLERİ</h2>
+
+                <a class="buttom" href="~/Panel/Contacts/Index">TALEP FORMLARI</a>
+                <a class="buttom" href="~/Panel/Projects/Index">PROJE EKLEME</a>
+                <a class="buttom" href="~/Panel/Generals/Index">SİTE AYARLARI</a>
+
+            </div>
+
+        </div>
+
+    </section>
+}
+else
+{
+    <section id="login">
+
+        <div class="row">
+
+            <div class="twelve columns centered">
+
+                <h2>GİRİŞ</h2>
+
+                <a class="buttom" href="/Account/Login">GİRİŞ</a>
+
+            </div>
+
+        </div>
+
+    </section>
+}
+

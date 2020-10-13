@@ -1,0 +1,50 @@
+﻿@model CleanerMVC.Models.Contact
+
+@{
+    ViewBag.Title = "TALEP FORMU DETAY";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>TALEP FORMU</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Müşteri Adı Soyadı:
+        </dt>
+
+        <dd>
+            @Model.CustomerName
+        </dd>
+
+        <dt>
+            Müşteri E-Mail:
+        </dt>
+
+        <dd>
+            @Model.CustomerEmail
+        </dd>
+
+        <dt>
+            Müşteri Telefon Numarası:
+        </dt>
+
+        <dd>
+            @Model.CustomerPhone
+        </dd>
+
+        <dt>
+            Müşteri Talep Açıklamsı:
+        </dt>
+
+        <dd>
+            @Model.CustomerDesc
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ContactID }) |*@
+    @Html.ActionLink("Listeye Geri Dön", "Index")
+</p>

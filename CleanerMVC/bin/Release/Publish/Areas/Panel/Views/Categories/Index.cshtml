@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CleanerMVC.Models.Category>
+
+@{
+    ViewBag.Title = "KATEGORİLER";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("YENİ OLUŞTUR", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Kategori Adı:
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.CategoryName
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.CategoryID }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.CategoryID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.CategoryID })
+        </td>
+    </tr>
+}
+
+</table>

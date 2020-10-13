@@ -1,0 +1,50 @@
+﻿@model CleanerMVC.Models.TeamMember
+
+@{
+    ViewBag.Title = "ÇALIŞMA ARKADAŞIMIZ DETAY";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>ÇALIŞMA ARKADAŞIMIZ</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Çalışan Resim:
+        </dt>
+
+        <dd>
+            @Model.ImageURL
+        </dd>
+
+        <dt>
+            Çalışan Ad Soyad:
+        </dt>
+
+        <dd>
+            @Model.NameSurname
+        </dd>
+
+        <dt>
+            Çalışan Açıklması:
+        </dt>
+
+        <dd>
+            @Model.Title
+        </dd>
+
+        <dt>
+            Çalışan Sosyal Medya:
+        </dt>
+
+        <dd>
+            @Model.SMLinks
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.TeamMemberID }) |
+    @Html.ActionLink("Listeye Geri Dön", "Index")
+</p>

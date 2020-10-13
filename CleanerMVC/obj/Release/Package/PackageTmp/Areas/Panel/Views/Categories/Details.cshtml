@@ -1,0 +1,26 @@
+﻿@model CleanerMVC.Models.Category
+
+@{
+    ViewBag.Title = "KATEGORİ DETAY";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>KATEGORİ</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Kategori Adı:
+        </dt>
+
+        <dd>
+            @Model.CategoryName
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.CategoryID }) |
+    @Html.ActionLink("Listeye Geri Dön", "Index")
+</p>

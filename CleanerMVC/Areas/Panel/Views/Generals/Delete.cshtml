@@ -1,0 +1,64 @@
+﻿@model CleanerMVC.Models.General
+
+@{
+    ViewBag.Title = "SİL";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>SİLMEK İSTEDİĞİNİZDEN EMİN MİSİNİZ?</h3>
+<div>
+    <h4>GENEL AYARLAR</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Logo:
+        </dt>
+
+        <dd>
+            @Model.LogoURL
+        </dd>
+
+        <dt>
+            Şirket Adı:
+        </dt>
+
+        <dd>
+            @Model.HeaderTitle
+        </dd>
+
+        <dt>
+            Şirket Sloganı:
+        </dt>
+
+        <dd>
+            @Model.HeaderSubtitle
+        </dd>
+
+        <dt>
+           Hakkımızda Yazısı Başlığı:
+        </dt>
+
+        <dd>
+            @Model.BennarTitle
+        </dd>
+
+        <dt>
+            Hakkımızda Yazısı:
+        </dt>
+
+        <dd>
+            @Model.BennarSubtitle
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Index")
+        </div>
+    }
+</div>

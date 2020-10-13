@@ -1,0 +1,63 @@
+﻿@using CleanerMVC.Models
+@model WorksViewModel
+
+@{
+    Layout = null;
+}
+<section id="works">
+
+    <!-- ROW -->
+
+    <div id="projects_grid" class="row">
+        <!-- DATA FILER -->
+
+        <ul class="filter">
+            <li><a class="active" href="#" data-filter="*">HEPSİ</a></li>
+
+            @foreach (var item in Model.Categories)
+            {
+                <li><a href="#" data-filter=".@item.CategoryName.Replace(" ","")">@item.CategoryName</a></li>
+            }
+        </ul>
+        <ul class="items three_up tiles centered">
+            <!-- PHOTO -->
+            @foreach (var item in Model.Projects)
+            {
+                <li class="item @item.ParentCategory.CategoryName.Replace(" ","")">
+                    <a onclick="DetailOpen(@item.CategoryID)">
+                        <img src="~/Uploads/Project/@item.ImageURL" alt="@item.ProjectName" style="width:300px; height:300px">
+                        <div>
+                            <h5>@item.ProjectName</h5>
+                            <span>@item.ShortDesc</span>
+                            
+                        </div>
+                    </a>
+                </li>
+            }
+        </ul>
+
+    </div>
+
+    <!-- PORTFOLIO DETAIL CONTAINER -->
+
+    <div id="portfolio_detail">
+
+        <!-- PORTFOLIO DETAIL -->
+        @foreach (var item in Model.Projects)
+        {
+            <div id="@Html.Raw("portfolio"+item.ProjectID)" class="row slide_portfolio">
+
+                <div class="seven columns centered">
+
+                    <img class="closeit" src="/Content/img/close.png" alt="Close Project" onclick="$('@Html.Raw("#portfolio"+item.ProjectID)').slideUp(); $('html, body').animate({scrollTop: $('#works').offset().top -70 }, 800);">
+                    <h2>@item.ProjectName</h2>
+                    <p>@Html.Raw(item.LongDesc)</p>
+                    <img src="~/Uploads/Project/@item.ImageURL" alt="Example"/>
+
+                </div>
+
+            </div>
+        }
+    </div> 	<!-- END PORTFOLIO DETAIL CONTAINER -->
+</section>
+

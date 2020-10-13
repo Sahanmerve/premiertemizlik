@@ -1,0 +1,58 @@
+﻿@model CleanerMVC.Models.General
+
+@{
+    ViewBag.Title = "GENEL AYARLAR DETAY";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>GENEL AYARLAR</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Logo:
+        </dt>
+
+        <dd>
+            @Model.LogoURL
+        </dd>
+
+        <dt>
+           Şirket Adı:
+        </dt>
+
+        <dd>
+            @Model.HeaderTitle
+        </dd>
+
+        <dt>
+            Şirket Sloganı:
+        </dt>
+
+        <dd>
+            @Model.HeaderSubtitle
+        </dd>
+
+        <dt>
+            Hakkımızda Yazısı Başlığı:
+        </dt>
+
+        <dd>
+            @Model.BennarTitle
+        </dd>
+
+        <dt>
+            Hakkımızda Yazısı:
+        </dt>
+
+        <dd>
+            @Model.BennarSubtitle
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.GeneralID }) |
+    @Html.ActionLink("Listeye Geri Dön", "Index")
+</p>

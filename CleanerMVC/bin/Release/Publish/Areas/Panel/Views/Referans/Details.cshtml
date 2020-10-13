@@ -1,0 +1,42 @@
+﻿@model CleanerMVC.Models.Referans
+
+@{
+    ViewBag.Title = "REFERANS DETAY";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>REFERANS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Firma Adı:
+        </dt>
+
+        <dd>
+            @Model.FirmaAd
+        </dd>
+
+        <dt>
+            Firma Site Adresi:
+        </dt>
+
+        <dd>
+            @Model.ReferansURL
+        </dd>
+
+        <dt>
+            Firma Logosu:
+        </dt>
+
+        <dd>
+            @Model.ReferansImageUrl
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.ReferansID }) |
+    @Html.ActionLink("Listeye Geri Dön", "Index")
+</p>

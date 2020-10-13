@@ -1,0 +1,48 @@
+﻿@model CleanerMVC.Models.Referans
+
+@{
+    ViewBag.Title = "SİL";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>SİLMEK İSTEDİĞİNİZE EMİN MİSİNİZ?</h3>
+<div>
+    <h4>REFERANS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Firma Adı:
+        </dt>
+
+        <dd>
+            @Model.FirmaAd
+        </dd>
+
+        <dt>
+            Firma Site Adresi:
+        </dt>
+
+        <dd>
+            @Model.ReferansURL
+        </dd>
+
+        <dt>
+            Firma Logosu:
+        </dt>
+
+        <dd>
+            @Model.ReferansImageUrl
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Index")
+        </div>
+    }
+</div>

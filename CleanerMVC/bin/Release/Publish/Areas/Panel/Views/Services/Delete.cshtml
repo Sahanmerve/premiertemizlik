@@ -1,0 +1,48 @@
+﻿@model CleanerMVC.Models.Service
+
+@{
+    ViewBag.Title = "SİL";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>SİLMEK İSTEDİĞİNİZE EMİN MİSİNİZ?</h3>
+<div>
+    <h4>SERVİS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Servis Adı:
+        </dt>
+
+        <dd>
+            @Model.ServiceName
+        </dd>
+
+        <dt>
+            Servis Açıklaması:
+        </dt>
+
+        <dd>
+            @Model.Desc
+        </dd>
+
+        <dt>
+            Servis Resmi:
+        </dt>
+
+        <dd>
+            @Model.ImageURL
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Index")
+        </div>
+    }
+</div>

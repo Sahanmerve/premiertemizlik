@@ -1,0 +1,58 @@
+﻿@model IEnumerable<CleanerMVC.Models.General>
+
+@{
+    ViewBag.Title = "GENEL AYARLAR";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("YENİ AYARLAR OLUŞTUR", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Logo
+        </th>
+        <th>
+            Şirket Adı
+        </th>
+        <th>
+            Şirket Sloganı
+        </th>
+        <th>
+            Hakkımızda Yazısı Başlığı
+        </th>
+        <th>
+            Hakkımızda Yazısı
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LogoURL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeaderTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeaderSubtitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BennarTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BennarSubtitle)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.GeneralID }) |
+                @Html.ActionLink("Detay", "Details", new { id = item.GeneralID }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.GeneralID })
+            </td>
+        </tr>
+    }
+
+</table>

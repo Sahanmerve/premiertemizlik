@@ -1,0 +1,25 @@
+﻿@using CleanerMVC.Models
+@model List<Referans>
+@{ 
+    Layout = null;
+}
+
+<section id="getit">
+    <div class="row">
+        <div class="owl-carousel owl-theme">
+            <h2 style="color:black;">REFERANSLAR</h2>
+            @foreach (var item in Model)
+            {
+            <div class="item twelve columns centered">
+
+                <h2 style="color:black;">@item.FirmaAd</h2>
+                <img src="~/Uploads/Referans/@item.ReferansImageUrl"/>
+                <a class="buttom" href="@item.ReferansURL" style="padding-top:15px;color:black;">@item.FirmaAd</a>
+
+            </div>
+            }
+
+        </div>
+    </div>
+</section>
+

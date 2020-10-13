@@ -1,0 +1,58 @@
+﻿@model CleanerMVC.Models.Project
+
+@{
+    ViewBag.Title = "PROJE DETAY";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>PROJE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Kategori Adı:
+        </dt>
+
+        <dd>
+            @Model.ParentCategory.CategoryName
+        </dd>
+
+        <dt>
+            Proje Adı:
+        </dt>
+
+        <dd>
+            @Model.ProjectName
+        </dd>
+
+        <dt>
+            Proje Özeti:
+        </dt>
+
+        <dd>
+            @Model.ShortDesc
+        </dd>
+
+        <dt>
+            Proje Açıklamsı:
+        </dt>
+
+        <dd>
+            @Model.LongDesc
+        </dd>
+
+        <dt>
+            Proje Resim:
+        </dt>
+
+        <dd>
+            @Model.ImageURL
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.ProjectID }) |
+    @Html.ActionLink("Listeye Geri Dön", "Index")
+</p>

@@ -1,0 +1,47 @@
+﻿@using CleanerMVC.Models
+@model WorksViewModel
+@{
+    Layout = null;
+}
+<section id="team">
+    <div class="row">
+        <!-- MEMBER /-->
+        @foreach (var item in Model.TeamMembers)
+        {
+            <div class="three columns member">
+
+                <div class="he-wrap tpl3 ">
+
+                    <img src="~/Uploads/TeamMember/@item.ImageURL" alt="@item.NameSurname">
+
+                    <div class="he-view">
+
+                        <div class="info-bottom a0" data-animate="fadeInUp">
+                            @if (item.SMLinks.FacebookURL != null)
+                            {
+                                <a href="@item.SMLinks.FacebookURL" target="_blank"><i class="icon" data-icon="&#xe045;"></i></a>
+                            }
+                            @if (item.SMLinks.TwitterURL != null)
+                            {
+                                <a href="@item.SMLinks.TwitterURL" target="_blank"><i class='icon' data-icon="&#xe033;"></i></a>
+                            }
+                            @if (item.SMLinks.InstagramURL != null)
+                            {
+                                <a href="@item.SMLinks.InstagramURL" target="_blank"><i class='icon' data-icon="&#xe033;"></i></a>
+                            }
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <h3>@item.NameSurname</h3>
+
+                <h4>@item.Title</h4>
+
+            </div>
+        }
+
+    </div>
+</section>
+

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CleanerMVC.Models.TeamMember>
+
+@{
+    ViewBag.Title = "ÇALIŞMA ARKADAŞLARIMIZ";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("YENİ ÇALIŞMA ARKADAŞI OLUŞTUR", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Çalışan Resmi:
+        </th>
+        <th>
+            Adı Soyadı:
+        </th>
+        <th>
+            Çalışan Açıklaması:
+        </th>
+        <th>
+            Çalışan Sosyal Medya Linkleri
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.ImageURL
+        </td>
+        <td>
+            @item.NameSurname
+        </td>
+        <td>
+            @item.Title
+        </td>
+        <td>
+            @item.SMLinks
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.TeamMemberID }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.TeamMemberID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.TeamMemberID })
+        </td>
+    </tr>
+}
+
+</table>

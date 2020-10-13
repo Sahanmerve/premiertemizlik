@@ -1,0 +1,56 @@
+﻿@model CleanerMVC.Models.Contact
+
+@{
+    ViewBag.Title = "SİL";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>SİLMEK İSTEDİĞİNİZDEN EMİN MİSİNİZ?</h3>
+<div>
+    <h4>Talep Formu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Müşteri Adı Soyadı: 
+        </dt>
+
+        <dd>
+            @Model.CustomerName
+        </dd>
+
+        <dt>
+            Müşteri E-Mail:
+        </dt>
+
+        <dd>
+            @Model.CustomerEmail
+        </dd>
+
+        <dt>
+          Müşteri Telefon Numarası:
+        </dt>
+
+        <dd>
+            @Model.CustomerPhone
+        </dd>
+
+        <dt>
+            Müşteri Talep Açıklaması:
+        </dt>
+
+        <dd>
+            @Model.CustomerDesc
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Index")
+        </div>
+    }
+</div>

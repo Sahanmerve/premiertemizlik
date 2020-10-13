@@ -1,0 +1,47 @@
+﻿@using CleanerMVC.Models
+@model WorksViewModel
+
+@{ 
+    Layout = null;
+}
+<section id="whatwedo">
+
+
+    <div class="row">
+
+
+        <ul class="one_up tiles">
+
+            <!-- SERVICE !-->
+            @foreach (var item in Model.Services)
+            {
+                <li class="service">
+
+                    <div class="two columns">
+
+                        <img src="~/Uploads/Service/@item.ImageURL" alt="@item.ServiceName">
+
+                    </div>
+
+                    <div class="nine columns">
+
+                        <h3>@item.ServiceName</h3>
+
+                        <p>@item.Desc </p>
+
+                    </div>
+
+                </li>
+            }
+
+
+
+
+
+        </ul>
+
+    </div>
+
+
+</section>
+

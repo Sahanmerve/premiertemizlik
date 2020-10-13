@@ -1,0 +1,64 @@
+﻿@model CleanerMVC.Models.Project
+
+@{
+    ViewBag.Title = "SİL";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>SİLMEK İSTEDİĞİNİZE EMİN MİSİNİZ?</h3>
+<div>
+    <h4>PROJE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Kategri Adı:
+        </dt>
+
+        <dd>
+            @Model.ParentCategory.CategoryName
+        </dd>
+
+        <dt>
+            Proje Adı:
+        </dt>
+
+        <dd>
+            @Model.ProjectName
+        </dd>
+
+        <dt>
+            Proje Özeti:
+        </dt>
+
+        <dd>
+            @Model.ShortDesc
+        </dd>
+
+        <dt>
+            Proje Açıklaması:
+        </dt>
+
+        <dd>
+            @Model.LongDesc
+        </dd>
+
+        <dt>
+            Proje Resmi:
+        </dt>
+
+        <dd>
+            @Model.ImageURL
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Listeye Geri Dön", "Index")
+        </div>
+    }
+</div>

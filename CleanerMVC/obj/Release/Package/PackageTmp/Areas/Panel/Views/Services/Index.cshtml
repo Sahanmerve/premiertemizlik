@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CleanerMVC.Models.Service>
+
+@{
+    ViewBag.Title = "BİZ NE YAPIYORUZ?";
+}
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("YENİ SERVİS OLUŞTUR", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Servis Adı:
+        </th>
+        <th>
+            Servis Açıklaması:
+        </th>
+        <th>
+            Servis Resmi:
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ServiceName
+            </td>
+            <td>
+                @item.Desc
+            </td>
+            <td>
+                @item.ImageURL
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.ServiceID }) |
+                @Html.ActionLink("Detay", "Details", new { id = item.ServiceID }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.ServiceID })
+            </td>
+        </tr>
+    }
+
+</table>

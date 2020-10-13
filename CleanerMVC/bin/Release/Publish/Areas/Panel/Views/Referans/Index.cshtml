@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CleanerMVC.Models.Referans>
+
+@{
+    ViewBag.Title = "REFERANSLAR";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("YENİ REFERANS OLUŞTUR", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Firma Adı:
+        </th>
+        <th>
+            Firma Site Adresi:
+        </th>
+        <th>
+           Firma Logosu:
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.FirmaAd
+        </td>
+        <td>
+            @item.ReferansURL
+        </td>
+        <td>
+            @item.ReferansImageUrl
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.ReferansID }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.ReferansID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.ReferansID })
+        </td>
+    </tr>
+}
+
+</table>
